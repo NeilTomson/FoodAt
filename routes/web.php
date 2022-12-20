@@ -61,3 +61,5 @@ Route::get('/orders', [AdminController::class, 'orderShow']);
 Route::get('/deleteorders/{id}', [AdminController::class, 'deleteorders']);
 
 Auth::routes();
+Route::fallback([IndexController::class, 'fallback']);
+

@@ -11,4 +11,8 @@ class IndexController extends Controller
         $food=food::all();
         return view('welcome', compact('food'));
     }
+    public function fallback(){
+        $food=food::all();
+        return redirect()->back();
+    }
 }

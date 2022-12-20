@@ -1,7 +1,6 @@
 <?php
 
 namespace App\Http\Controllers;
-
 use Illuminate\Http\Request;
 use App\Models\User;
 use App\Models\Food;
@@ -11,12 +10,12 @@ use App\Models\Reservation;
 
 class AdminController extends Controller
 {
-    // public function __construct()
-    // {
-    //     $this->middleware('isAdmin')->only(['updatmenu', 'editchef', 'search', 'orderShow', 'updateChef', 'editmenu', 'deletemenu', 'user', 'deleteuser', 'deletemenu', 'foodmenu', 'cheff', 'showreservation', 'upload', 'uploadchef']);
-    // }
-    // user
+    public function __construct()
+    {
+        $this->middleware('isAdmin')->only(['updatmenu', 'editchef', 'search', 'orderShow', 'updateChef', 'editmenu', 'deletemenu', 'user', 'deleteuser', 'deletemenu', 'foodmenu', 'cheff', 'showreservation', 'upload', 'uploadchef']);
+    }
 
+    // user
     public function user()
     {
         $data = user::all();
